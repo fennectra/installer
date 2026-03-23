@@ -1,0 +1,23 @@
+#!/usr/bin/env php
+<?php
+
+// Cherche l'autoloader
+$autoloadPaths = [
+    __DIR__ . '/../vendor/autoload.php',
+    __DIR__ . '/../../../autoload.php',
+];
+
+foreach ($autoloadPaths as $path) {
+    if (file_exists($path)) {
+        require $path;
+        break;
+    }
+}
+
+use Fennectra\Installer\NewCommand;
+use Symfony\Component\Console\Application;
+
+$app = new Application('Fennectra Installer', '1.0.0');
+$app->add(new NewCommand());
+$app->setDefaultCommand('new');
+$app->run();

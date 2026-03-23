@@ -1,0 +1,20 @@
+{
+    "name": "fennectra/installer",
+    "description": "Fennectra — Installer CLI pour créer de nouvelles applications",
+    "type": "library",
+    "license": "MIT",
+    "keywords": ["php", "framework", "installer", "fennectra"],
+    "homepage": "https://github.com/fennectra/installer",
+    "autoload": {
+        "psr-4": {
+            "Fennectra\\Installer\\": "src/"
+        }
+    },
+    "require": {
+        "php": ">=8.2",
+        "symfony/console": "^7.0",
+        "symfony/process": "^7.0"
+    },
+    "bin": ["bin/fennectra"],
+    "minimum-stability": "stable"
+}
